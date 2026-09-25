@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 344 100% 98%;
+    --foreground: 282 72% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 282 72% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 282 72% 18%;
+
+    --primary: 334 91% 51%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 47 100% 58%;
+    --secondary-foreground: 282 72% 18%;
+
+    --muted: 338 42% 94%;
+    --muted-foreground: 282 14% 43%;
+
+    --accent: 274 72% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 337 32% 87%;
+    --input: 337 32% 87%;
+    --ring: 334 91% 51%;
+
+    --brand-purple: 282 76% 32%;
+    --brand-purple-foreground: 0 0% 100%;
+    --brand-teal: 174 72% 43%;
+    --brand-teal-foreground: 0 0% 100%;
+    --brand-orange: 27 100% 56%;
+    --brand-orange-foreground: 282 72% 18%;
+    --pink-soft: 337 100% 94%;
+    --purple-soft: 269 100% 95%;
+    --yellow-soft: 48 100% 89%;
+    --teal-soft: 174 63% 91%;
+
+    /* Status colors */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --success-soft: 142 70% 95%;
+
+    --pending: 0 84% 60%;
+    --pending-foreground: 0 0% 100%;
+    --pending-soft: 0 86% 97%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  button, a { -webkit-tap-highlight-color: transparent; }
+}
+
+@layer utilities {
+  .font-display { font-family: 'Bricolage Grotesque', system-ui, sans-serif; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { scrollbar-width: none; }
+  .safe-bottom { padding-bottom: max(0.75rem, env(safe-area-inset-bottom)); }
+  .brand-shadow { box-shadow: 0 10px 30px -12px hsl(var(--brand-purple) / 0.10); }
+  .soft-shadow { box-shadow: 0 6px 24px -10px hsl(var(--brand-purple) / 0.08); }
+  .text-success { color: hsl(var(--success)); }
+  .bg-success { background-color: hsl(var(--success)); }
+  .bg-success-soft { background-color: hsl(var(--success-soft)); }
+  .text-pending { color: hsl(var(--pending)); }
+  .bg-pending { background-color: hsl(var(--pending)); }
+  .bg-pending-soft { background-color: hsl(var(--pending-soft)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+}
+/* Esconde apenas marca dagua lovable */
+#lovable-badge {
+  display: none !important;
+}
+
+@keyframes splash-pop { 0% { opacity: 0; transform: scale(.6) rotate(-8deg); } 70% { transform: scale(1.06) rotate(2deg); } 100% { opacity: 1; transform: scale(1) rotate(0); } }
+@keyframes splash-rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes splash-float { 0% { opacity: 0; transform: translateY(10px) scale(.8); } 100% { opacity: 1; transform: translateY(-6px) scale(1); } }
+.splash-pop { animation: splash-pop .6s cubic-bezier(.2,.9,.3,1.2) both; }
+.splash-rise { animation: splash-rise .5s ease-out both; }
+.splash-float { animation: splash-float 1.2s ease-out both; }
