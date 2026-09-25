@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Bell, Box, ChevronRight, Cuboid, Flame, Heart, PenTool, Plus, Search, Shirt, ShoppingCart, Sparkles, X } from "lucide-react";
 import { brl, Product, useStore } from "@/store";
 import workshopHero from "@/assets/workshop-hero.jpg";
@@ -42,6 +43,7 @@ const ProductCard = ({ p, i, onOpen, onAdd, novo = false }: { p: Product; i: num
 
 const Shop = () => {
   const { products, addToCart } = useStore();
+  const navigate = useNavigate();
   const [q, setQ] = useState("");
   const [cat, setCat] = useState("Todos");
   const [open, setOpen] = useState<Product | null>(null);
@@ -114,7 +116,7 @@ const Shop = () => {
               const Icon = c === "Todos" ? Box : serviceIcons[c as keyof typeof serviceIcons] || Box;
               const style = serviceStyles[index % serviceStyles.length];
               return (
-                <button key={c} onClick={() => setCat(c)} className={`flex w-[78px] shrink-0 flex-col items-center gap-2 text-center text-[10px] font-bold ${cat === c ? "text-primary" : "text-muted-foreground"}`}>
+                <button key={c} onClick={() => { setCat(c); navigate(`/categoria/${encodeURIComponent(c)}`); }} className={`flex w-[78px] shrink-0 flex-col items-center gap-2 text-center text-[10px] font-bold ${cat === c ? "text-primary" : "text-muted-foreground"}`}>
                   <span className={`flex h-16 w-16 items-center justify-center rounded-full transition-transform ${cat === c ? "scale-105 bg-primary text-primary-foreground shadow-md" : style}`}><Icon className="h-7 w-7" /></span>
                   <span className="min-h-8 leading-tight">{c}</span>
                 </button>

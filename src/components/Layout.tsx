@@ -10,14 +10,9 @@ export const Layout = () => {
   const tab = ({ isActive }: { isActive: boolean }) =>
     `flex min-w-16 flex-col items-center gap-1 py-2 text-[10px] font-bold transition-colors ${isActive ? "text-primary" : "text-muted-foreground"}`;
   const goToCategories = () => {
-    const scroll = () =>
-      document.getElementById("categorias")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    if (pathname === "/") {
-      scroll();
-    } else {
-      navigate("/");
-      setTimeout(scroll, 150);
-    }
+    const scroll = () => document.getElementById("categorias")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (pathname === "/") scroll();
+    else { navigate("/"); setTimeout(scroll, 150); }
   };
   return (
     <div className="mx-auto min-h-screen w-full max-w-md bg-background pb-28 shadow-2xl md:max-w-3xl md:shadow-none lg:max-w-6xl">

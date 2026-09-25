@@ -4,6 +4,7 @@ import { Layout } from "@/components/Layout";
 import Shop from "@/pages/Shop";
 import Cart from "@/pages/Cart";
 import Admin from "@/pages/Admin";
+import Category from "@/pages/Category";
 import { useState } from "react";
 import { Splash } from "@/components/Splash";
 
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/" element={<Shop />} />
           <Route path="/carrinho" element={<Cart />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/categoria/:nome" element={<Category />} />
           <Route path="*" element={<Shop />} />
         </Route>
       </Routes>
