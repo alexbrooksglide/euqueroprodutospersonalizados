@@ -2,6 +2,7 @@ import { useState } from "react";
 import { LogOut, Pencil, Plus, Trash2, X } from "lucide-react";
 import { brl, Order, Product, useStore } from "@/store";
 import { Thumb } from "./Shop";
+import { supabaseConfigured } from "@/lib/supabase";
 
 // Senha provisória — será substituída pelo login do Supabase
 const DEMO_PIN = "1234";
@@ -22,9 +23,14 @@ const Admin = () => {
       <div className="flex min-h-[80vh] flex-col justify-center gap-3 px-6">
         <h1 className="font-display text-3xl font-bold">Área administrativa</h1>
         <p className="text-muted-foreground">Digite a senha para continuar (provisória: 1234).</p>
+        {!supabaseConfigured && (
+          <div className="rounded-xl border border-warning/40 bg-warning/10 px-4 py-3 text-sm text-foreground">
+            Configure VITE_SUPABASE_URL e VITE_SUPABASE_ANON_KEY para conectar este app ao Supabase.
+          </div>
+        )}
         <input className={field} type="password" inputMode="numeric" placeholder="Senha" value={pin} onChange={(e) => { setPin(e.target.value); setErr(false); }} />
         {err && <p className="text-sm text-destructive">Senha incorreta.</p>}
-        <button onClick={() => (pin === DEMO_PIN ? setIsAdmin(true) : setErr(true))} className="rounded-xl bg-primary py-4 font-semibold text-primary-foreground">Entrar</button>
+        <button type="button" onClick={() => (pin === DEMO_PIN ? setIsAdmin(true) : setErr(true))} className="rounded-xl bg-primary py-4 font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Entrar</button>
       </div>
     );
 
