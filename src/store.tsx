@@ -31,11 +31,11 @@ export type Order = {
 
 const DAY = 24 * 60 * 60 * 1000;
 const seed: Product[] = [
-  { id: "1", name: "Boné com bordado", description: "Personalize cores, nome e desenho para criar uma peça só sua.", price: 69.9, category: "Bordados", image: embroideredCap, stock: 12, active: true, createdAt: Date.now() - 30 * DAY },
-  { id: "2", name: "Copo com gravação", description: "Gravação a laser precisa e durável em copo térmico.", price: 89.9, category: "Laser", image: laserTumbler, stock: 8, active: true, createdAt: Date.now() - 21 * DAY },
-  { id: "3", name: "Caneca personalizada", description: "Sua arte em cores vivas por sublimação.", price: 39.9, category: "Sublimação", image: sublimationMug, stock: 18, active: true, createdAt: Date.now() - 14 * DAY },
-  { id: "4", name: "Organizador de mesa", description: "Peça funcional produzida sob medida em impressão 3D.", price: 59.9, category: "Impressão 3D", image: organizer3d, stock: 10, active: true, createdAt: Date.now() - 2 * DAY },
-  { id: "5", name: "Caderno personalizado", description: "Capa personalizada e acabamento pensado para presentear.", price: 44.9, category: "Papelaria", image: personalizedNotebook, stock: 20, active: true, createdAt: Date.now() - 1 * DAY },
+  { id: "1", name: "Boné personalizado bordado", description: "Boné personalizado com bordado do seu nome, logo ou desenho favorito.", price: 69.9, category: "Bordados", image: embroideredCap, stock: 12, active: true, createdAt: Date.now() - 30 * DAY },
+  { id: "2", name: "Copo térmico personalizado", description: "Copo térmico com gravação a laser para presentear ou levar sua marca com você.", price: 89.9, category: "Laser", image: laserTumbler, stock: 8, active: true, createdAt: Date.now() - 21 * DAY },
+  { id: "3", name: "Caneca personalizada com arte", description: "Caneca com estampa colorida e acabamento feito para transformar momentos em presente.", price: 39.9, category: "Sublimação", image: sublimationMug, stock: 18, active: true, createdAt: Date.now() - 14 * DAY },
+  { id: "4", name: "Organizador de mesa 3D", description: "Organizador produzido em impressão 3D para deixar sua mesa mais prática e bonita.", price: 59.9, category: "Impressão 3D", image: organizer3d, stock: 10, active: true, createdAt: Date.now() - 2 * DAY },
+  { id: "5", name: "Caderno personalizado", description: "Caderno com capa personalizada para anotar planos, ideias e histórias do seu jeito.", price: 44.9, category: "Papelaria", image: personalizedNotebook, stock: 20, active: true, createdAt: Date.now() - 1 * DAY }, 
 ];
 
 type Store = {
