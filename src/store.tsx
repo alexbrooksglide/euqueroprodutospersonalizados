@@ -15,6 +15,7 @@ export type Product = {
   stock: number;
   active: boolean;
   createdAt: number;
+  sourceUrl?: string;
 };
 
 export type CartItem = { productId: string; qty: number };
@@ -31,11 +32,11 @@ export type Order = {
 
 const DAY = 24 * 60 * 60 * 1000;
 const seed: Product[] = [
-  { id: "1", name: "Boné personalizado bordado", description: "Boné personalizado com bordado do seu nome, logo ou desenho favorito.", price: 69.9, category: "Bordados", image: embroideredCap, stock: 12, active: true, createdAt: Date.now() - 30 * DAY },
-  { id: "2", name: "Copo térmico personalizado", description: "Copo térmico com gravação a laser para presentear ou levar sua marca com você.", price: 89.9, category: "Laser", image: laserTumbler, stock: 8, active: true, createdAt: Date.now() - 21 * DAY },
-  { id: "3", name: "Caneca personalizada com arte", description: "Caneca com estampa colorida e acabamento feito para transformar momentos em presente.", price: 39.9, category: "Sublimação", image: sublimationMug, stock: 18, active: true, createdAt: Date.now() - 14 * DAY },
-  { id: "4", name: "Organizador de mesa 3D", description: "Organizador produzido em impressão 3D para deixar sua mesa mais prática e bonita.", price: 59.9, category: "Impressão 3D", image: organizer3d, stock: 10, active: true, createdAt: Date.now() - 2 * DAY },
-  { id: "5", name: "Caderno personalizado", description: "Caderno com capa personalizada para anotar planos, ideias e histórias do seu jeito.", price: 44.9, category: "Papelaria", image: personalizedNotebook, stock: 20, active: true, createdAt: Date.now() - 1 * DAY }, 
+  { id: "1", name: "Boné personalizado bordado", description: "Boné personalizado com bordado do seu nome, logo ou desenho favorito.", price: 69.9, category: "Bordados", image: embroideredCap, stock: 12, active: true, createdAt: Date.now() - 30 * DAY, sourceUrl: "https://www.instagram.com/p/DdW4VzsFbz9/" },
+  { id: "2", name: "Copo térmico personalizado", description: "Copo térmico com gravação a laser para presentear ou levar sua marca com você.", price: 89.9, category: "Laser", image: laserTumbler, stock: 8, active: true, createdAt: Date.now() - 21 * DAY, sourceUrl: "https://www.instagram.com/p/DdpViAaFVyl/" },
+  { id: "3", name: "Caneca personalizada com arte", description: "Caneca com estampa colorida e acabamento feito para transformar momentos em presente.", price: 39.9, category: "Sublimação", image: sublimationMug, stock: 18, active: true, createdAt: Date.now() - 14 * DAY, sourceUrl: "https://www.instagram.com/p/DdJqHlRlWKz/" },
+  { id: "4", name: "Organizador de mesa 3D", description: "Organizador produzido em impressão 3D para deixar sua mesa mais prática e bonita.", price: 59.9, category: "Impressão 3D", image: organizer3d, stock: 10, active: true, createdAt: Date.now() - 2 * DAY, sourceUrl: "https://www.instagram.com/p/DctaWPmRmbr/" },
+  { id: "5", name: "Caderno personalizado", description: "Caderno com capa personalizada para anotar planos, ideias e histórias do seu jeito.", price: 44.9, category: "Papelaria", image: personalizedNotebook, stock: 20, active: true, createdAt: Date.now() - 1 * DAY, sourceUrl: "https://www.instagram.com/p/Cs4kMDHL1N8/" }, 
 ];
 
 type Store = {
