@@ -24,7 +24,7 @@ const ProductCard = ({ p, i, onOpen, onAdd, novo = false }: { p: Product; i: num
         <div className="relative">
           <Thumb p={p} className="aspect-[4/5] rounded-2xl" />
           <span className={`absolute left-2 top-2 rounded-full px-2.5 py-1 text-[9px] font-extrabold uppercase ${serviceStyles[i % serviceStyles.length]}`}>{p.category}</span>
-          {novo && <span className="absolute bottom-2 left-2 rounded-full bg-secondary px-2.5 py-1 text-[9px] font-extrabold uppercase text-secondary-foreground">Novo</span>}
+          {novo && <span className="absolute bottom-2 left-2 rounded-full bg-secondary px-2.5 py-1 text-[9px] font-extrabold uppercase text-secondary-foreground">NOVO</span>}
           <span className="absolute right-2 top-2 rounded-full bg-card/90 p-2 text-primary"><Heart className="h-4 w-4" /></span>
         </div>
         <div className="px-2 pb-2 pt-3">
